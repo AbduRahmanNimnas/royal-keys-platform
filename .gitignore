@@ -4,7 +4,20 @@ node_modules
 .nitro
 .vinxi
 dist
+
+# Runtime environment files: never commit real values.
 .env
-.env.local
+.env.*
+!.env.example
+
+# Private credentials / certificates.
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*.json
+service-account*.json
+secrets/
+
 *.log
 .DS_Store

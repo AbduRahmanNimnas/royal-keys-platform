@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "test": "vitest run"
+    "test": "vitest run",
+    "security:secrets": "node scripts/check-secrets.mjs"
   },
   "overrides": {
     "rolldown": "1.2.1"
