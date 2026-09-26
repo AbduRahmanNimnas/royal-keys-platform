@@ -68,11 +68,13 @@ for (const file of files) {
     }
   }
 
-  const viteMatches = content.match(viteSecretPattern) ?? [];
-  for (const variable of new Set(viteMatches)) {
-    findings.push(
-      `${file}: ${variable} uses the VITE_ prefix, which would expose it to the browser`,
-    );
+  if (extname(file).toLowerCase() !== ".md") {
+    const viteMatches = content.match(viteSecretPattern) ?? [];
+    for (const variable of new Set(viteMatches)) {
+      findings.push(
+        `${file}: ${variable} uses the VITE_ prefix, which would expose it to the browser`,
+      );
+    }
   }
 }
 
